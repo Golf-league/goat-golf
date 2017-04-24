@@ -28,6 +28,7 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'byebug'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'

@@ -1,0 +1,25 @@
+<div class="container">
+  <div>
+    <a href="/scores/new" class="btn btn-primary float-sm-right">Add a Score</a> 
+    <h3>Scores</h3>
+  </div>
+  <table class="table table-striped">
+    <thead class="thead-default">
+      <tr>
+        <td><%= "Player" %></td>
+        <td><%= "Course" %></td>
+        <td><%= "Date" %></td>
+        <td class="hidden-sm-down"><%= "Handicap" %></td>
+        <td><%= "Stableford" %></td>
+        <td class="hidden-sm-down"><%= "Strokes" %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @scores.each do |score| %>
+        <tr scope="row">
+          <%= render score %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

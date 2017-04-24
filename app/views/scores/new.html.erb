@@ -1,0 +1,25 @@
+<%= form_for @score do |f| %>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= select_date Date.today, prefix: :date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+  <div class="form-group">
+    <%= f.label :handicap %>
+    <%= f.number_field :handicap %>
+  </div>
+  <div class="form-group">
+    <%= f.label :strokes %>
+    <%= f.number_field :strokes %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stableford %>
+    <%= f.number_field :stableford %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Add Score" %>
+  </div>
+<% end %>
