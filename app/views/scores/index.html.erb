@@ -15,10 +15,14 @@
       </tr>
     </thead>
     <tbody>
+      <% if @scores.any? %>
       <% @scores.each do |score| %>
         <tr scope="row">
           <%= render score %>
         </tr>
+      <% end %>
+    <% else %>
+      <p>No scores yet</P>
       <% end %>
     </tbody>
   </table>
