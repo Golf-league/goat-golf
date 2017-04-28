@@ -13,11 +13,17 @@ class ScoresController < ApplicationController
   end
 
   def create
-    Score.create(score_params.merge(user: current_user))
+    Score.create(score_params)
     redirect_to "/scores"
   end
 
   def score_params
-    params.require(:score).permit(:date, :course, :handicap, :strokes, :stableford)
+    params.require(:score).permit(:course, :handicap, :strokes, :stableford).merge(user_id: current_user.id, date: input_date)
+  end
+
+  def input_date
+    Date.civil(params[:date]["date(1i)"].to_i,
+               params[:date]["date(2i)"].to_i,
+               params[:date]["date(3i)"].to_i)
   end
 end

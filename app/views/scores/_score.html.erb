@@ -1,6 +1,6 @@
 <td><%= link_to score.user.name, user_path(score.user.id) %></td>
 <td><%= score.course %></td>
-<td><%= score.date %></td>
+<td><%= score.date.strftime("%d-%m-%Y") %></td>
 <td class="hidden-sm-down"><%= score.handicap %></td>
 <td><%= score.stableford %></td>
 <td class="hidden-sm-down"><%= score.strokes %></td>
