@@ -1,5 +1,20 @@
 <% content_for :title do %>Leaderboard<% end %>
 <h3>Leaderboard</h3>
-<p>
-Leaderboard coming soon
-</p>
+<table class="table table-striped">
+  <thead class="thead-default">
+    <tr>
+      <td><%= "Player" %></td>
+      <td><%= "Rounds" %></td>
+      <td><%= "Stableford" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr scope="row">
+        <td><%= user.name %></td>
+        <td><%= user.total_rounds %></td>
+        <td><%= user.total_score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
