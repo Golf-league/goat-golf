@@ -4,4 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :scores
+
+  def total_score
+    scores.sum(:stableford)
+  end
+
+  def total_rounds
+    scores.count
+  end
 end
