@@ -1,25 +1,28 @@
+
 <%= form_for @score do |f| %>
   <div class="form-group">
     <%= f.label :date %>
     <%= date_select :date, :date, selected: Date.today %>
   </div>
   <div class="form-group">
+    <%= f.label "Player" %>
+    <%= f.select :user_id, players_for_select, {}, prompt: "Select", id: "player-select", class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :course %>
-    <%= f.text_field :course, value: "Leatherhead Golf Club" %>
+    <%= f.text_field :course, value: "Leatherhead Golf Club", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :handicap %>
-    <%= f.number_field :handicap %>
+    <%= f.number_field :handicap, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :strokes %>
-    <%= f.number_field :strokes %>
+    <%= f.number_field :strokes, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :stableford %>
-    <%= f.number_field :stableford %>
+    <%= f.number_field :stableford, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.submit "Add Score" %>
-  </div>
+  <%= f.submit 'Add score', :class => 'btn btn-primary' %>
 <% end %>
