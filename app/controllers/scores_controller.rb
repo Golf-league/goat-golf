@@ -18,7 +18,9 @@ class ScoresController < ApplicationController
   end
 
   def score_params
-    params.require(:score).permit(:course, :handicap, :strokes, :stableford, :user_id).merge(date: input_date)
+    params.require(:score)
+          .permit(:course, :handicap, :strokes, :stableford, :user_id, :open_round)
+          .merge(date: input_date)
   end
 
   def input_date
