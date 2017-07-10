@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :scores
 
   def total_score
-    scores.sum(:stableford)
+    scores.order(stableford: :desc).limit(3).pluck(:stableford).inject(:+)
   end
 
   def total_rounds
