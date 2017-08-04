@@ -1,0 +1,24 @@
+<% content_for :title do %>Leaderboard<% end %>
+<h3>This Year</h3>
+<table class="table table-striped">
+  <thead class="thead-default">
+    <tr>
+      <td><%= "Player" %></td>
+      <td><%= "Best Score" %></td>
+      <td><%= "2nd best Score" %></td>
+      <td><%= "3rd best Score" %></td>
+      <td><%= "Total points" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr scope="row">
+        <td><%= image_tag user.avatar.url(:thumb), class: "avatar-thumb-small" %> <%= user.nickname %></td>
+        <td><%= user.best_score %></td>
+        <td><%= user.second_score %></td>
+        <td><%= user.third_score %></td>
+        <td><%= user.total_score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+

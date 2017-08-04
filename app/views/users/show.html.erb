@@ -1,3 +1,26 @@
 <h3>User</h3>
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<table class="table table-striped">
+  <thead class="thead-default">
+    <tr>
+      <td><%= "Player" %></td>
+      <td><%= "Course" %></td>
+      <td><%= "Date" %></td>
+      <td class="hidden-sm-down"><%= "Handicap" %></td>
+      <td><%= "Stableford" %></td>
+      <td class="hidden-sm-down"><%= "Strokes" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @user.scores.any? %>
+      <% @user.scores.each do |score| %>
+        <tr scope="row">
+          <%= render score %>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>No scores yet</P>
+    <% end %>
+  </tbody>
+</table>
