@@ -1,19 +1,23 @@
 <% content_for :title do %>Leaderboard<% end %>
-<h3>Leaderboard</h3>
+<h3>This Year</h3>
 <table class="table table-striped">
   <thead class="thead-default">
     <tr>
       <td><%= "Player" %></td>
-      <td><%= "Rounds" %></td>
-      <td><%= "Points" %></td>
+      <td><%= "Best Score" %></td>
+      <td><%= "2nd best Score" %></td>
+      <td><%= "3rd best Score" %></td>
+      <td><%= "Total points" %></td>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr scope="row">
         <td><%= image_tag user.avatar.url(:thumb), class: "avatar-thumb-small" %> <%= user.nickname %></td>
-        <td><%= user.total_rounds_this_year %></td>
-        <td><%= user.total_score %></td>
+        <td><%= user.last_years_best_score %></td>
+        <td><%= user.last_years_second_score %></td>
+        <td><%= user.last_years_third_score %></td>
+        <td><%= user.last_years_total_score %></td>
       </tr>
     <% end %>
   </tbody>
