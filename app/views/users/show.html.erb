@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <% if @user.scores.any? %>
-      <% @user.scores.each do |score| %>
+      <% @user.scores.ordered.each do |score| %>
         <tr scope="row">
           <%= render score %>
         </tr>
