@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :scores
 
   def total_score
-    this_years_scores.inject(:+)
+    this_years_scores.inject(0,:+)
   end
 
   def total_rounds
