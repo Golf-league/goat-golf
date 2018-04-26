@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead class="thead-default">
     <tr>
+      <td></td>
       <td><%= "Player" %></td>
       <td><%= "Rounds" %></td>
       <td><%= "Points" %></td>
@@ -11,8 +12,14 @@
   <tbody>
     <% @users.each do |user| %>
       <tr scope="row">
+<<<<<<< HEAD
         <td><%= image_tag user.avatar.url(:thumb), class: "avatar-thumb-small" %> <%= user.nickname %></td>
         <td><%= user.total_rounds_this_year %></td>
+=======
+        <td><%= image_tag user.avatar.url(:thumb), class: "avatar-thumb-small" %></td>
+        <td><strong><%= user.nickname %></strong></td>
+        <td><%= user.total_rounds %></td>
+>>>>>>> Updated local CSS
         <td><%= user.total_score %></td>
       </tr>
     <% end %>
